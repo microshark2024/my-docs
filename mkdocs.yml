@@ -1,0 +1,55 @@
+site_name: 我的技术文档
+site_url: https://example.com
+
+theme:
+  name: material
+  language: zh # 界面设为中文（搜索提示、上一页/下一页等）
+  
+  # 1. 开启常用布局与交互特性
+  features:
+    - navigation.tabs          # 顶级分类显示在顶部导航栏
+    - navigation.sections      # 侧边栏分组展开
+    - navigation.top           # 滚动时出现“返回顶部”按钮
+    - search.suggest           # 搜索输入时提供自动补全建议
+    - search.highlight         # 搜索结果高亮显示
+    - content.code.copy        # 代码块右上角显示“一键复制”按钮
+    - content.code.annotate    # 允许在代码块中添加注释气泡
+
+  # 2. 配置亮色/暗色模式切换按钮
+  palette:
+    # 亮色模式
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo          # 主题主色调（可选 teal, blue, black 等）
+      accent: indigo           # 交互高亮色
+      toggle:
+        icon: material/brightness-7
+        name: 切换到深色模式
+    # 暗色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: 切换到亮色模式
+
+# 3. 开启极其强大的 Markdown 扩展语法（强烈推荐）
+markdown_extensions:
+  - admonition                 # 提示框语法（!!! note）
+  - pymdownx.details           # 可折叠的提示框（??? note）
+  - pymdownx.superfences       # 支持代码块嵌套、Mermaid 流程图
+  - pymdownx.highlight:        # 代码语法高亮增强
+      anchor_linenums: true
+  - pymdownx.inlinehilite      # 行内代码高亮
+  - pymdownx.tabbed:           # 内容选项卡切换（=== "Tab 1"）
+      alternate_style: true
+  - pymdownx.tasklist:         # 待办任务列表（- [x]）
+      custom_checkbox: true
+
+# 4. 页面导航结构
+nav:
+  - 首页: index.md
+  - 快速开始:
+      - 安装指南: getting-started/install.md
+      - 基础配置: getting-started/config.md
